@@ -1,0 +1,230 @@
+{
+  "set_dns": {
+    "title": "Menu -> Network -> Set DNS",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "Primary",
+        "type": "ip",
+        "required": 1
+      }, {
+        "name": "Secondary",
+        "type": "ip",
+        "required": 0
+      }
+    ],
+    "onload": {
+      "type": "FILL",
+      "command": "get_dns"
+    },
+    "messages": {
+      "0": "Success!",
+      "1": "Not enough permissions!"
+    }
+  },
+  "set_device_config": {
+    "title": "Menu -> Network -> Configure Device",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "Device",
+        "type": "select",
+        "required": 1,
+        "options": "get_devices",
+        "onchange": {
+          "type": "FILL",
+          "command": "get_device_config"
+        }
+      }, {
+        "name": "Name",
+        "type": "string",
+        "required": 1
+      }, {
+        "name": "IP",
+        "type": "ip",
+        "required": 1
+      }, {
+        "name": "Netmask",
+        "type": "ip",
+        "required": 1
+      }, {
+        "name": "Gateway",
+        "type": "ip",
+        "required": 1
+      }
+    ],
+    "messages": {
+      "0": "Success!",
+      "1": "Not enough permissions!"
+    }
+  },
+  "ping": {
+    "title": "Menu -> Network -> Ping",
+    "type": "stream",
+    "behavior": "increment",
+    "limit": 99,
+    "inputs": [
+      {
+        "name": "IP",
+        "type": "ip",
+        "required": 1
+      }
+    ]
+  },
+  "tracert": {
+    "title": "Menu -> Network -> Trace route",
+    "type": "stream",
+    "behavior": "substitute",
+    "inputs": [
+      {
+        "name": "IP",
+        "type": "ip",
+        "required": 1
+      }
+    ],
+    "onsubmit": {
+        "type": "COMMAND",
+        "command": "tracert_start_background"
+    }
+  },
+  "check_connection": {
+    "title": "Menu -> Network -> Telnet",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "IP",
+        "type": "ip",
+        "required": 1
+      },
+      {
+	"name": "Port",
+	"type": "string",
+	"required": 1
+      },
+      {
+        "name": "Protocol",
+        "type": "select",
+        "required": 1,
+        "options": [
+			{
+				"name": "TCP",
+				"value": "tcp"
+			}, {
+				"name": "UDP",
+				"value": "udp"
+			}
+		]
+      }
+    ],
+    "messages": {
+      "0": "Success!",
+      "1": "Destination Unreachable!"
+    }
+  },
+  "set_app_ip": {
+    "title": "Menu -> Application -> Set Web Application IP",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "IP",
+        "type": "ip",
+        "required": 1
+      }
+    ],
+    "onload": {
+      "type": "FILL",
+      "command": "get_app_ip"
+    },
+    "messages": {
+      "0": "Success!",
+      "1": "Not enough permissions!",
+      "2": "Not an RCX Application machine!"
+    }
+  },
+  "restart_service": {
+    "title": "Menu -> Services -> Restart Service",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "Service",
+        "type": "select",
+        "required": 1,
+        "options": [
+			{
+				"name": "Webserver",
+				"value": "httpd"
+			}, {
+				"name": "Database",
+				"value": "oracle-xe"
+			}, {
+				"name": "SSH",
+				"value": "sshd"
+			}, {
+				"name": "Samba",
+				"value": "smbd"
+			}, {
+				"name": "Voice Manager",
+				"value": "asterisk"
+			}
+		]
+      }
+    ],
+    "messages": {
+      "0": "Success!",
+      "1": "Not enough permissions!"
+    }
+  },
+  "stop_service": {
+    "title": "Menu -> Services -> Stop Service",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "Service",
+        "type": "select",
+        "required": 1,
+        "options": [
+			{
+				"name": "Webserver",
+				"value": "httpd"
+			}, {
+				"name": "Database",
+				"value": "oracle-xe"
+			}, {
+				"name": "SSH",
+				"value": "sshd"
+			}, {
+				"name": "Samba",
+				"value": "smbd"
+			}, {
+				"name": "Voice Manager",
+				"value": "asterisk"
+			}
+		]
+      }
+    ],
+    "messages": {
+      "0": "Success!",
+      "1": "Not enough permissions!"
+    }
+  },
+  "set_asterisk_device": {
+    "title": "Menu -> Application -> Set Voice Manager Device",
+    "type": "save_config",
+    "inputs": [
+      {
+        "name": "Device",
+        "type": "select",
+        "required": 1,
+        "options": "get_devices",
+        "onload": {
+          "type": "FILL",
+          "command": "get_asterisk_device"
+        }
+      }
+    ],
+    "messages": {
+      "0": "Success!",
+      "1": "Not enough permissions!"
+    }
+  }
+}
