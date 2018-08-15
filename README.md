@@ -46,3 +46,7 @@ Menus and forms are described in JSON files, and the form submission executes a 
  - Provide a Form editor
  - Provide a UnFT config tool
  - Port the project to other front-ends
+
+## License
+
+See the [LICENSE](LICENSE) file for license rights and limitations (GPLv2).
