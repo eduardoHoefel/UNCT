@@ -37,7 +37,9 @@ def main():
 
         windows_utils.clear()
         exit()
-    except:
+    except Exception as inst:
+        print("Unexpected error:", sys.exc_info()[0])
+        print(inst)
         print('Exception found.\n Exiting...')
         #raise
         windows_utils.clear()
