@@ -9,40 +9,40 @@ My dream is to create a generic tool, able to run as a Windows app, Linux shell,
 Over the next days, I'll try to refactor the code to a MVC model, create interfaces and abstract classes to simplify the task of extending this project.
 Also, it'll ease the involvement of new developers who wish to contribute.
 
-# How it works
+## How it works
 
 Menus and forms are described in JSON files, and the form submission executes a script passing the submitted values as parameters.
 
-# System Requirements
+## System Requirements
 
  - Terminal emulator
  - Python 3.4
  - Ncurses
 
-# TODO
+## TODO
 
- Version 1.1:
+### Version 1.1:
 
  - Refactor code
  - Provide documentation
  - Specify json patterns
 
- Version 1.2:
+### Version 1.2:
 
  - Remove recursion from menu files and let it load inside menus from other files
  - Do the same with form files
 
- Version 1.3:
+### Version 1.3:
 
  - Extend window funcionalities in terminal
  - More input types
 
- Version 1.4:
+### Version 1.4:
 
  - Create a default form save file
  - Ease the translation from that file to other formats
 
- Version 2.0:
+### Version 2.0:
  - Provide a Form editor
  - Provide a UnFT config tool
  - Port the project to other front-ends
