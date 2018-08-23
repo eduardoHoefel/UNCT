@@ -49,4 +49,4 @@ Menus and forms are described in JSON files, and the form submission executes a 
 
 ## License
 
-See the [LICENSE](LICENSE) file for license rights and limitations (GPLv2).
+See the [LICENSE](LICENSE) file for license rights and limitations (GPLv3).
