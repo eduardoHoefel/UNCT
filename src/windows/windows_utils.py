@@ -38,7 +38,7 @@ def print_window(window):
                 i += 1
 
         with open('version') as f:
-            subtitle = 'UnCT v%s' % (f.readline())
+            subtitle = 'UnFT v%s' % (f.readline())
             renderer.addstr(height+1, 2, subtitle, colors.get['RCX_TITLE']) # Title for this menu
 
     elif type == WINDOW_MENU:
